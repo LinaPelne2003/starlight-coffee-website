@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shopping Cart | Starlight Coffee</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                <h2>☕ Starlight Coffee</h2>
+            </div>
+
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+
+            <div class="nav-icons">
+
+                <a href="cart.html">
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span id="cart-count">0</span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= PAGE TITLE ================= -->
+
+    <section class="cart-header">
+
+        <h1>Shopping Cart</h1>
+
+        <p>
+            Review your selected coffee products before checkout.
+        </p>
+
+    </section>
+
+    <!-- ================= CART ================= -->
+
+    <section class="cart-section">
+
+        <div id="cart-items">
+
+            <!-- Products will be loaded here by cart.js -->
+
+        </div>
+
+        <div class="cart-summary">
+
+            <h2>Order Summary</h2>
+
+            <div class="summary-row">
+
+                <span>Total Items</span>
+
+                <span id="total-items">0</span>
+
+            </div>
+
+            <div class="summary-row">
+
+                <span>Total Price</span>
+
+                <span>₹<span id="total-price">0</span></span>
+
+            </div>
+
+            <button id="checkout-btn" class="btn">
+
+                Proceed to Checkout
+
+            </button>
+
+            <button id="clear-cart-btn" class="btn clear-btn">
+
+                Clear Cart
+
+            </button>
+
+        </div>
+
+    </section>
+
+    <!-- ================= EMPTY CART ================= -->
+
+    <section id="empty-cart" style="display:none;">
+
+        <h2>Your Cart is Empty ☕</h2>
+
+        <p>
+            Looks like you haven't added any coffee yet.
+        </p>
+
+        <br>
+
+        <a href="shop.html" class="btn">
+
+            Continue Shopping
+
+        </a>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Starlight Coffee. All Rights Reserved.
+
+        </p>
+
+    </footer>
+
+    <!-- JavaScript -->
+
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

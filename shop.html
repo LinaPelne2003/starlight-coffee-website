@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shop | Starlight Coffee</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                <h2>☕ Starlight Coffee</h2>
+            </div>
+
+            <ul class="nav-links">
+
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html" class="active">Shop</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+
+            </ul>
+
+            <div class="nav-icons">
+
+                <a href="#">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </a>
+
+                <a href="cart.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count">0</span>
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+    <!-- ================= PAGE TITLE ================= -->
+
+    <section class="shop-banner">
+
+        <h1>Our Coffee Collection</h1>
+
+        <p>
+            Freshly roasted coffee and premium accessories
+            delivered right to your doorstep.
+        </p>
+
+    </section>
+
+    <!-- ================= SEARCH & FILTER ================= -->
+
+    <section class="shop-controls">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search Coffee...">
+
+        <select id="categoryFilter">
+
+            <option value="All">All Categories</option>
+            <option value="Hot Coffee">Hot Coffee</option>
+            <option value="Cold Coffee">Cold Coffee</option>
+            <option value="Coffee Beans">Coffee Beans</option>
+            <option value="Accessories">Accessories</option>
+
+        </select>
+
+    </section>
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <section class="shop-products">
+
+        <div
+            class="product-container"
+            id="product-list">
+
+            <!-- Products will be loaded here using JavaScript -->
+
+        </div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 Starlight Coffee. All Rights Reserved.
+        </p>
+
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+   <script src="js/products.js"></script>
+<script src="js/shop.js"></script>
+<script src="js/script.js"></script>
+
+    <script>
+
+        const productList = document.getElementById("product-list");
+
+        const searchInput = document.getElementById("searchInput");
+
+        const categoryFilter = document.getElementById("categoryFilter");
+
+
+
+        function displayProducts(productArray) {
+
+            productList.innerHTML = "";
+
+            productArray.forEach(product => {
+
+                productList.innerHTML += `
+
+                    <div class="product-card">
+
+                        <img src="${product.image}" alt="${product.name}">
+
+                        <h3>${product.name}</h3>
+
+                        <p>${product.description}</p>
+
+                        <h4>₹${product.price}</h4>
+
+                        <button class="btn add-cart">
+                            Add To Cart
+                        </button>
+
+                    </div>
+
+                `;
+
+            });
+
+        }
+
+
+
+        displayProducts(products);
+
+
+
+        searchInput.addEventListener("keyup", () => {
+
+            const keyword = searchInput.value;
+
+            displayProducts(searchProducts(keyword));
+
+        });
+
+
+
+        categoryFilter.addEventListener("change", () => {
+
+            displayProducts(
+
+                getProductsByCategory(categoryFilter.value)
+
+            );
+
+        });
+
+    </script>
+
+</body>
+
+</html>
